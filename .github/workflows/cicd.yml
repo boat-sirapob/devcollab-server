@@ -30,8 +30,8 @@ jobs:
       - name: Copy files to server
         uses: appleboy/scp-action@v1
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
+          host: ${{ vars.REMOTE_HOST }}
+          username: ${{ vars.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           source: "dist,package.json,package-lock.json"
           target: "/home/ubuntu/apps/devcollab-server"
@@ -39,8 +39,8 @@ jobs:
       - name: Restart server
         uses: appleboy/ssh-action@v1.2.4
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
+          host: ${{ vars.REMOTE_HOST }}
+          username: ${{ vars.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
             cd /home/ubuntu/apps/devcollab-server
