@@ -19,7 +19,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: "npm"
+          cache: "yarn"
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
         run: yarn install --immutable
@@ -33,7 +36,7 @@ jobs:
           host: ${{ vars.REMOTE_HOST }}
           username: ${{ vars.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
-          source: "dist,package.json,package-lock.json"
+          source: "dist,package.json,yarn-lock.json"
           target: "/home/ubuntu/apps/devcollab-server"
       
       - name: Restart server
@@ -43,6 +46,19 @@ jobs:
           username: ${{ vars.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
+            set -e
+
             cd /home/ubuntu/apps/devcollab-server
+
+            export NVM_DIR="$HOME/.nvm"
+            if [ -s "$NVM_DIR/nvm.sh" ]; then
+              . "$NVM_DIR/nvm.sh"
+            fi
+
+            node -v
+            corepack enable
+            corepack prepare yarn@stable --activate
+            yarn -v
+            
             yarn install --immutable
             pm2 reload devcollab-server
