@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "description": "",
+  "packageManager": "yarn@4.12.0",
   "devDependencies": {
     "@types/ws": "^8.18.1",
     "@types/express-ws": "^3.0.6",
@@ -23,9 +24,10 @@
   "dependencies": {
     "@hocuspocus/server": "^3.4.3",
     "@y/websocket-server": "^0.1.1",
+    "express": "^4.21.2",
     "express-ws": "^5.0.2",
     "ws": "^8.18.3",
-    "peer": "^1.0.2",
+    "y-protocols": "^1.0.6",
     "yjs": "^13.6.27"
   }
 }
