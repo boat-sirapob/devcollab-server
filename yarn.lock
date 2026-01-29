@@ -14,20 +14,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hocuspocus/common@npm:^3.4.3":
-  version: 3.4.3
-  resolution: "@hocuspocus/common@npm:3.4.3"
+"@hocuspocus/common@npm:^3.4.4":
+  version: 3.4.4
+  resolution: "@hocuspocus/common@npm:3.4.4"
   dependencies:
     lib0: "npm:^0.2.87"
-  checksum: 10c0/f50b3c1b4ce5f54dd1649bdce52204e9961fa210f70e0f905a2e7cec77ccf831916dd75220d962bf143c2e5a781003d8e55ba7987f3f616bff5eb46f9fed8689
+  checksum: 10c0/412a7b2ff47cfa6570d841bc3ae7b2d6279c96b32726c7c20dbd3389557bf69abbe70059ca040ee813364a0617a33351e5c1099253855b95e4fcc3980467de32
   languageName: node
   linkType: hard
 
-"@hocuspocus/server@npm:^3.4.3":
-  version: 3.4.3
-  resolution: "@hocuspocus/server@npm:3.4.3"
+"@hocuspocus/extension-logger@npm:^3.4.4":
+  version: 3.4.4
+  resolution: "@hocuspocus/extension-logger@npm:3.4.4"
   dependencies:
-    "@hocuspocus/common": "npm:^3.4.3"
+    "@hocuspocus/server": "npm:^3.4.4"
+  checksum: 10c0/6d051618627b2cd6ee1555e2a210de8fe5768018b0bbeab825864765a31dbffcf3a79064d74e11d210adc6d860f97b588f76f2ae59dfc5fab9f43b51c2108053
+  languageName: node
+  linkType: hard
+
+"@hocuspocus/server@npm:^3.4.4":
+  version: 3.4.4
+  resolution: "@hocuspocus/server@npm:3.4.4"
+  dependencies:
+    "@hocuspocus/common": "npm:^3.4.4"
     async-lock: "npm:^1.3.1"
     async-mutex: "npm:^0.5.0"
     kleur: "npm:^4.1.4"
@@ -36,7 +45,7 @@ __metadata:
   peerDependencies:
     y-protocols: ^1.0.6
     yjs: ^13.6.8
-  checksum: 10c0/e063b68941823be10a56c2757f9b546d5dfbe5fdfae0bc47189d27dd5fbed03b8e1b3cfb3fc259e24ddc52aa2051678b5285a1f5e515718f7177b3f4727a74fc
+  checksum: 10c0/7ea56b6d05bd4504acdb1cf2f64bbb32f466cee5ce1d0478e8bd2ab279240293c022caa1bbcf0482e26bd4bf01ce66b33891c9b827fc5dd3518a659317c62c24
   languageName: node
   linkType: hard
 
@@ -562,7 +571,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "devcollab-server@workspace:."
   dependencies:
-    "@hocuspocus/server": "npm:^3.4.3"
+    "@hocuspocus/extension-logger": "npm:^3.4.4"
+    "@hocuspocus/server": "npm:^3.4.4"
     "@types/express-ws": "npm:^3.0.6"
     "@types/node": "npm:^25.0.0"
     "@types/ws": "npm:^8.18.1"
